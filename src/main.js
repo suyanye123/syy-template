@@ -5,6 +5,7 @@ import uView from "uview-ui";
 
 Vue.config.productionTip = false;
 Vue.use(uView);
+Vue.use(Vuex);
 
 App.mpType = "app";
 
