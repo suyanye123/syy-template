@@ -2,6 +2,8 @@
 export default {
   onLaunch: function () {
     console.log("App Launch");
+    // 隐藏原生tabbar
+    uni.hideTabBar();
     // 获取设备信息
     uni.getSystemInfo({
       success: function (res) {
@@ -12,19 +14,7 @@ export default {
     // 获取用户信息
     uni.getUserInfo();
     wx.login({
-      success(res) {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: "https://example.com/onLogin",
-            data: {
-              code: res.code,
-            },
-          });
-        } else {
-          console.log("登录失败！" + res.errMsg);
-        }
-      },
+      success(res) {},
     });
   },
   onShow: function () {

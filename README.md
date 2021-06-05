@@ -51,7 +51,7 @@ uView-version 分支——引入了 uView UI 库，并安装了 sass 和 sass-lo
 
 关于UI库的选择，uView是市面上目前（2021年5月）使用最多的 uniapp  UI框架，多端适配，文档齐全；
 
-ColorUI 是一款多端适配，高度自定义的Css组件库，但是一年多未更新  [查看说明](https://ext.dcloud.net.cn/plugin?id=239)
+笔者还用过ColorUI，是一款多端适配，高度自定义的Css组件库，但是一年多未更新  [查看说明](https://ext.dcloud.net.cn/plugin?id=239)
 
 ---
 
@@ -59,11 +59,13 @@ ColorUI 是一款多端适配，高度自定义的Css组件库，但是一年多
 
 ### #可能出现的问题：
 
-1.使用 uView-version，安装依赖失败
+1.安装依赖失败
 
 通常是因为 sass 下载失败，多安装几次，或者有能力的话建议翻墙
 
-2.使用 uView-version，第一次跑项目时出错提示
+2.第一次跑项目时出错提示
+
+例如：
 
 ```bash
 TypeError: this.getOptions is not a function
