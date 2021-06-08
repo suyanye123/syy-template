@@ -2,6 +2,7 @@
 export default {
   onLaunch: function () {
     console.log("App Launch");
+
     // 隐藏原生tabbar
     uni.hideTabBar();
     // 获取设备信息

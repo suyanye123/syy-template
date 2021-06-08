@@ -16,6 +16,8 @@
     </u-navbar>
     <!-- 内容 -->
     <view @click="getUserInfo">点击获取用户信息</view>
+
+    <view>当前为您报时{{time}}</view>
     <!-- 自定义tabbar -->
     <u-tabbar v-model="current"
               :list="mybar"
@@ -28,10 +30,13 @@
 </template>
 <script>
 import { mybar } from "../../static/mybar";
+import { mytime } from "../../utils/syy_tools";
 export default {
   data() {
     return {
       mybar: mybar,
+      time: "",
+      timer: null,
     };
   },
   methods: {
@@ -49,7 +54,14 @@ export default {
       });
     },
   },
-  onLoad() {},
+  onShow() {
+    this.timer = setInterval(() => {
+      this.time = mytime(new Date().getTime(), "/");
+    }, 1000);
+  },
+  onUnload() {
+    clearInterval(this.timer);
+  },
 };
 </script>
 <style  lang='scss' scoped >
