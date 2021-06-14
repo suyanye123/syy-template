@@ -47,24 +47,11 @@
 	},
 	"quickapp": { /* 快应用特有相关 */},
 	"mp-weixin": { /* 微信小程序特有相关 */
-		"appid": "wx175eed43ff059b53",
+		"appid": "yourwxminiprogramId",
 		"setting": {
 			"urlCheck": false
 		},
-		// 用于获取定位授权
-		"permission": {
-			"scope.userLocation": {
-				"desc": "你的位置信息将用于小程序位置接口的效果展示"
-			}
-		},
-		"usingComponents": true,
-		// 项目优化的配置
-		"optimization": {
-			"subPackages": true, //开启分包
-			"treeShaking": {
-				"enable": true //打包时使用treeShaking	
-			}
-		}
+		"usingComponents": true
 	},
 	"mp-alipay": {
 		"usingComponents": true

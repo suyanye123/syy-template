@@ -5,7 +5,6 @@
   "scripts": {
     "serve": "npm run dev:h5",
     "build": "npm run build:h5",
-    "wx": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
     "build:custom": "cross-env NODE_ENV=production uniapp-cli custom",
     "build:h5": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build",
@@ -61,12 +60,9 @@
     "@vue/shared": "^3.0.0",
     "core-js": "^3.6.5",
     "flyio": "^0.6.2",
-    "node-sass": "^4.14.1",
     "regenerator-runtime": "^0.12.1",
-    "sass-loader": "^7.3.1",
-    "uview-ui": "^1.8.4",
     "vue": "^2.6.11",
-    "vuex": "^3.6.2"
+    "vuex": "^3.2.0"
   },
   "devDependencies": {
     "@babel/runtime": "~7.12.0",
@@ -96,15 +92,5 @@
   ],
   "uni-app": {
     "scripts": {}
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/suyanye123/syy-uniapp-template.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/suyanye123/syy-uniapp-template/issues"
-  },
-  "homepage": "https://github.com/suyanye123/syy-uniapp-template#readme"
+  }
 }

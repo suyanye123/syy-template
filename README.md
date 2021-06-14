@@ -1,27 +1,5 @@
 # syy-uniapp-template
 
-### #目录结构
-
-```
-syy-uniapp-template
-│   public                  // 静态文件
-└───src                     // 业务逻辑代码
-│   │   pages               // 主页面
-│   │   api                 // http api 层
-│   └── components          // 公共组件
-│   │     └──global         // 全局组件
-│   │        │ BaseTable     // 基础表格
-│   │        │ BoxContent    // 基础Box
-│   │   mixins              // mixins
-│   │   store               // vuex
-│   │   styles              // 公共样式文件
-│   │   utils               // 工具库
-│   │   global.js           // 全局模块处理
-│   │   page.json    		// 页面注册、tabBar及分包等
-│   │   test.ts             // 空文件，用于避免tsconfig警告
-│   │   main.js             // 入口文件
-```
-
 ### #使用方法：
 
 #### 1.安装依赖
@@ -47,23 +25,17 @@ master 分支——官方模板
 
 uView-version 分支——引入了 uView UI 库，并安装了 sass 和 sass-loader
 
-关于 UI 库的选择，uView 是市面上目前（2021 年 5 月）使用最多的 uniapp UI 框架，多端适配，文档齐全；
-
-笔者还用过 ColorUI，是一款多端适配，高度自定义的 Css 组件库，但是一年多未更新 [查看说明](https://ext.dcloud.net.cn/plugin?id=239)
-
 ---
 
 <br/>
 
-### #可能出现的问题：
+### #可能问题：
 
-1.安装依赖失败
+1.使用 uView-version，安装依赖失败
 
 通常是因为 sass 下载失败，多安装几次，或者有能力的话建议翻墙
 
-2.第一次跑项目时出错提示
-
-例如：
+2.使用 uView-version，第一次跑项目时出错提示
 
 ```bash
 TypeError: this.getOptions is not a function
@@ -73,7 +45,7 @@ TypeError: this.getOptions is not a function
 
 查看自己的 node 版本 `node -v`
 
-<img src="./public/sass-v.png" alt="image-20210531154308278" style="zoom:67%;" />
+<img src=".\public\sass-v.png"  style="zoom:67%;" />
 
 如图所示，比如我的 node 版本为 14，那么就应该安装 sass 4.14 版本
 

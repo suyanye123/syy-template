@@ -1,5 +1,4 @@
 const plugins = []
-
 if (process.env.UNI_OPT_TREESHAKINGNG) {
   plugins.push(require('@dcloudio/vue-cli-plugin-uni-optimize/packages/babel-plugin-uni-api/index.js'))
 }
@@ -25,7 +24,7 @@ if (
     plugins.push([
       require('@dcloudio/vue-cli-plugin-hbuilderx/packages/babel-plugin-console'),
       {
-        file (file) {
+        file(file) {
           file = normalizePath(file)
           if (file.indexOf(input) === 0) {
             return path.relative(input, file)
