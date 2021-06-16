@@ -1,18 +1,19 @@
 <script>
 export default {
   onLaunch: function () {
-    console.log("App Launch");
+    console.log("App Launch，开发环境为" + process.env.NODE_ENV);
 
-    // 隐藏原生tabbar
+    // 1.隐藏原生tabbar
     uni.hideTabBar();
-    // 获取设备信息
+
+    // 2.获取设备信息
     uni.getSystemInfo({
       success: function (res) {
         console.log(res);
       },
     });
 
-    // 获取用户信息
+    // 3.获取用户信息
     uni.getUserInfo();
     wx.login({
       success(res) {},
