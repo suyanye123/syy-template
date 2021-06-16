@@ -1,5 +1,9 @@
 <script>
+import mapMutations from "vuex";
 export default {
+  methods: {
+    // ...mapMutations(["user/login"]), //对全局的方法进行监听
+  },
   onLaunch: function () {
     console.log("App Launch，开发环境为" + process.env.NODE_ENV);
 
@@ -8,15 +12,25 @@ export default {
 
     // 2.获取设备信息
     uni.getSystemInfo({
-      success: function (res) {
-        console.log(res);
+      success: (res) => {
+        console.log("systeminfo", res);
+        this.$store.commit("device/setBarHeight", res.statusBarHeight);
       },
     });
 
     // 3.获取用户信息
-    uni.getUserInfo();
-    wx.login({
-      success(res) {},
+    let userInfo = uni.getStorageSync("userInfo");
+    if (userInfo.openId) {
+      this["user/login"](userInfo);
+    }
+    uni.login({
+      provider: "weixin",
+      success: (res) => {
+        console.log("wx.login成功", res); //此时获得code，code有效时间10min，根据code可以换取openID
+      },
+      fail: (res) => {
+        console.log("wx.login失败", res);
+      },
     });
   },
   onShow: function () {

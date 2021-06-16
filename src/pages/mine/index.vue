@@ -28,7 +28,11 @@
 </template>
 <script>
 import { mybar } from "../../static/mybar";
+import { mapState, mapMutations } from "vuex";
 export default {
+  computed: {
+    ...mapState(["hasLogin,userInfo"]),
+  },
   data() {
     return {
       mybar: mybar,

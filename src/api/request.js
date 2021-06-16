@@ -1,4 +1,4 @@
-import uni_request from "../utils/uni_request";
+import uni_request from "../utils/uni_request.js";
 
 // 开发环境时为线下地址，生产时为线上
 const baseurl =
@@ -7,9 +7,6 @@ const baseurl =
   "https://www.apiopen.top/journalismApi";
 console.log(process.env.NODE_ENV, "baseURL是", baseurl);
 
-const $request = uni_request({
-  baseurl,
-  header
-});
-
-export default $request;
+// export const $request = uni_request({
+//   baseurl
+// });
