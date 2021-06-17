@@ -31,6 +31,7 @@
 <script>
 import { mybar } from "../../static/mybar";
 import { mytime } from "../../utils/syy_tools";
+import getUserInfo from "../../api/getUserInfo";
 export default {
   data() {
     return {
@@ -53,6 +54,11 @@ export default {
         },
       });
     },
+  },
+  async onLoad() {
+    //用于让页面的onload在onlaunch异步任务后执行
+    await this.$onLaunched;
+    this.$request;
   },
   onShow() {
     this.timer = setInterval(() => {

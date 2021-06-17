@@ -1,4 +1,4 @@
-/**
+/** 时间戳转换年月日
  * @param {number} time 时间戳
  * @param {string} icon 间隔符号
  * @param {number} length 1输出小时分秒,2输出年月日，其他输出全部
@@ -41,9 +41,35 @@ export function mytime(time, icon, length) {
   return TimeText;
 }
 
-/**
+/** 防抖
  * @param {function} func 输入函数
  * @param {number} wait 间隔时间
  * @return {function} 返回debounce防抖处理后的函数
  */
 export function debounce(func, wait) {}
+
+
+
+/** obj转字符串
+ * @param  obj -需要转换成路径参数的对象
+ * @param  NeedParmas -需要从对象里面提取的参数
+ */
+export function ObjToParam(Obj, NeedParmas = []) {
+  let ParmasObj = {};
+  let url = "?";
+  if (NeedParmas.length) {
+    NeedParmas.forEach((item) => {
+      ParmasObj[item] = Obj[item];
+    });
+  } else {
+    ParmasObj = Obj;
+  }
+  for (const key in ParmasObj) {
+    if (Object.hasOwnProperty.call(ParmasObj, key)) {
+      url += key + "=" + ParmasObj[key] + "&";
+    }
+  }
+  url = url.substring(0, url.length - 1);
+  console.log("url", url);
+  return url;
+}

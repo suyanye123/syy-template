@@ -11,6 +11,7 @@ export default {
     }
   },
   mutations: {
+    // 登录
     login(state, userInfo) {
       state.userInfo.name = userInfo.name || '';
       state.userInfo.phone = userInfo.phone || '';
@@ -19,6 +20,7 @@ export default {
       state.hasLogin = true; //已登录
       uni.setStorageSync('userInfo', userInfo)
     },
+    // 退出
     logout(state) {
       state.userInfo = {};
       state.hasLogin = false;
