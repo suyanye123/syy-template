@@ -1,7 +1,5 @@
 <script>
-import { Base64 } from "./api/base64";
-import api from "./api/api";
-import { baseurl } from "./api/request";
+import { baseurl, api } from "./api/request";
 export default {
   methods: {
     // 获取设备信息
@@ -27,21 +25,18 @@ export default {
               code: res.code,
             },
             header: {
-              Authorization:
-                "Basic " + Base64.encode("yuke-client-uac:yukeClientSecret"),
+              Authorization: "Basic " + Base64.encode(""),
             },
             success: (res) => {
               console.log("获取到openId", res);
-              // 通过penId获取到用户信息，然后自动登录,拿到token
+              // 通过openId获取到用户信息，然后自动登录,拿到token
               uni
                 .request({
                   method: "POST",
                   url:
                     baseurl + api.Login + "&openId=" + res.data.result.openId,
                   header: {
-                    Authorization:
-                      "Basic " +
-                      Base64.encode("yuke-client-uac:yukeClientSecret"),
+                    Authorization: "Basic " + Base64.encode(""),
                   },
                 })
                 .then((res) => {

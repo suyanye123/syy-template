@@ -11,8 +11,8 @@ let is = false
 // }
 export const baseurl =
   is ?
-  "http://192.168.3.121:7979" :
-  "https://api.yuke520.com";
+  "" :
+  "";
 console.log(process.env.NODE_ENV, "baseURL是", baseurl);
 
 const request = uni_request({
