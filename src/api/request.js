@@ -1,5 +1,5 @@
 import uni_request from "../utils/uni_request.js";
-import $store from '../store/index'
+
 import * as apis from "./api";
 export const api = apis.default;
 // 开发环境时为线下地址，生产时为线上
@@ -21,14 +21,14 @@ const request = uni_request({
 
 request.interceptors.request.use(async (config, ...args) => {
   // 请求拦截器
-  // ...
-  if (!$store.state.userinfo.token) {
+  uni.getStorageSync('token')
+  if (!token) {
     // 如果没得 token
     await new Promise(resolve => {
       //todo
     })
   }
-  config.header.Authorization = "Bearer " + $store.state.userinfo.token; // 把 token 放在请求头
+  config.header.Authorization = "Bearer " + token.token; // 把 token 放在请求头
   return config;
 });
 
