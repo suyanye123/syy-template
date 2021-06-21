@@ -31,7 +31,7 @@
 <script>
 import { mybar } from "../../static/mybar";
 import { mytime } from "../../utils/syy_tools";
-import getUserInfo from "../../api/getUserInfo";
+
 export default {
   data() {
     return {
