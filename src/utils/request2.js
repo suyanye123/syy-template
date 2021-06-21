@@ -1,4 +1,4 @@
-// 封装一个http 方法
+// 封装一个http 方法，可以刷新token，但是没有拦截器哦
 
 let temp_request = [],
   is_freshing = false;

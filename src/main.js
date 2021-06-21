@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App";
 
 import store from "./store"; //引入vuex
+import './router.js'
 import request from "./api/request";
 
 import uView from "uview-ui";

@@ -1,6 +1,6 @@
 import uni_request from "../utils/uni_request.js";
 
-import * as apis from "./api";
+import * as apis from "./api-yuke";
 export const api = apis.default;
 // 开发环境时为线下地址，生产时为线上
 let is = false
