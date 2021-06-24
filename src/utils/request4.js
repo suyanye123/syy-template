@@ -1,8 +1,8 @@
+// 完全模仿axios实现的request，看不懂请参考 https://juejin.cn/post/6911568558170472461#comment
 function isPlainObject(val) {
   if (toString.call(val) !== '[object Object]') {
     return false
   }
-
   var prototype = Object.getPrototypeOf(val);
   return prototype === null || prototype === Object.prototype;
 }
@@ -52,14 +52,15 @@ function merge(...args) {
 }
 
 function buildFullPath(baseURL, relativeURL) {
-
+  // 如果是绝对路径
   if (/^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(relativeURL)) return relativeURL
-
+  // 如果不是绝对路径，进行拼接
   return relativeURL ?
     baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '') :
     baseURL;
 }
 
+// 默认配置
 const instanceConfig = {
   baseURL: '',
   header: {
@@ -71,6 +72,7 @@ const instanceConfig = {
 }
 
 function dispatchRequest(config) {
+  // 拼接完整的url
   const url = buildFullPath(config.baseURL, config.url)
   return new Promise((resolve, reject) => {
     config.success = function (res) {
@@ -87,6 +89,7 @@ function dispatchRequest(config) {
   })
 }
 
+// 拦截器
 class InterceptorManager {
   handlers = []
 
@@ -104,8 +107,9 @@ class InterceptorManager {
 }
 
 export default class Request {
+  // 引入默认配置
   defaults = instanceConfig
-
+  // 引入拦截器
   interceptors = {
     request: new InterceptorManager(),
     response: new InterceptorManager()
@@ -116,12 +120,13 @@ export default class Request {
   }
 
   request(config) {
+    // 合并参数
     config = merge(this.defaults, config)
 
     const chain = [dispatchRequest, undefined]
 
     let promise = Promise.resolve(config)
-
+    // 遍历拦截器
     this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
       chain.unshift(interceptor.fulfilled, interceptor.rejected)
     })
@@ -129,7 +134,7 @@ export default class Request {
     this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
       chain.push(interceptor.fulfilled, interceptor.rejected)
     })
-
+    // 创建promise链
     while (chain.length) {
       promise = promise.then(chain.shift(), chain.shift())
     }

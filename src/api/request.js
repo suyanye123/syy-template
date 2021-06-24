@@ -1,25 +1,12 @@
-import uni_request from "../utils/uni_request.js";
+import request from "../utils/request0";
 
 import * as apis from "./api-yuke";
 export const api = apis.default;
 // 开发环境时为线下地址，生产时为线上
-let is = false
-// if (process.env.NODE_ENV == "development") {
-//   is = true
-// } else {
-//   is = false
-// }
-export const baseurl =
-  is ?
-  "" :
-  "";
+
 console.log(process.env.NODE_ENV, "baseURL是", baseurl);
 
-const request = uni_request({
-  baseurl
-});
-
-request.interceptors.request.use(async (config, ...args) => {
+request.interceptor.request.use(async (config, ...args) => {
   // 请求拦截器
   uni.getStorageSync('token')
   if (!token) {
@@ -32,7 +19,7 @@ request.interceptors.request.use(async (config, ...args) => {
   return config;
 });
 
-request.interceptors.response.use(async (response, ...args) => {
+request.interceptor.response.use(async (response, ...args) => {
   // 响应拦截器
   // 判断为401时，执行刷新token的方法
   const statusCode = response.statusCode;

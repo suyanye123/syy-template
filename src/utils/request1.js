@@ -18,9 +18,9 @@
 */
 
 
-// 全局请求封装，无拦截器哦
+// 全局请求封装，无拦截器哦，返回一个请求字典
 const token = uni.getStorageSync('token');
-import service from "./service.js"; // 请求字典
+import service from "../api/api1"; // 请求字典
 
 
 export default (url, method, params) => {

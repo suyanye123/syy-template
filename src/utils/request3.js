@@ -1,4 +1,4 @@
-// 完整的包含拦截器的request
+// 完整的包含拦截器的request，基于Object.defineProperty挂载在vue的原型上
 const config = Symbol('config')
 const isCompleteURL = Symbol('isCompleteURL')
 const requestBefore = Symbol('requestBefore')

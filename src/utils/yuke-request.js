@@ -1,4 +1,4 @@
-// yuke别人封装的request
+// yuke封装的request
 let isTrue = false;
 import {
   ObjToParam
