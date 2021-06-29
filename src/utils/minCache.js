@@ -1,107 +1,105 @@
-// 使用Map和 uni.storage 封装的缓存器
-let cacheMap = new Map()
-let timeoutDefault = 1200
+// 使用Map和 uni.storage 封装的缓存器，https://github.com/134355/min-cache
+let cacheMap = new Map();
+let timeoutDefault = 1200;
 
 function isTimeout(name) {
-  const data = cacheMap.get(name)
-  if (!data) return true
-  if (data.timeout === 0) return false
-  const currentTime = Date.now()
-  const overTime = (currentTime - data.createTime) / 1000
+  const data = cacheMap.get(name);
+  if (!data) return true;
+  if (data.timeout === 0) return false;
+  const currentTime = Date.now();
+  const overTime = (currentTime - data.createTime) / 1000;
   if (overTime > data.timeout) {
-    cacheMap.delete(name)
-    if (name.startsWith('_')) {
+    cacheMap.delete(name);
+    if (name.startsWith("_")) {
       try {
-        uni.removeStorageSync(name)
+        uni.removeStorageSync(name);
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
     }
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
 class CacheCell {
   constructor(data, timeout) {
-    this.data = data
-    this.timeout = timeout
-    this.createTime = Date.now()
+    this.data = data;
+    this.timeout = timeout;
+    this.createTime = Date.now();
   }
 }
 
 class MinCache {
   constructor(timeout) {
     try {
-      const res = uni.getStorageInfoSync()
-      res.keys.forEach(name => {
+      const res = uni.getStorageInfoSync();
+      res.keys.forEach((name) => {
         try {
-          const value = uni.getStorageSync(name)
-          cacheMap.set(name, value)
+          const value = uni.getStorageSync(name);
+          cacheMap.set(name, value);
         } catch (e) {
-          console.log(e)
+          console.log(e);
         }
-      })
+      });
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
-    timeoutDefault = timeout
+    timeoutDefault = timeout;
   }
   set(name, data, timeout = timeoutDefault) {
-    const cachecell = new CacheCell(data, timeout)
-    let cache = null
-    if (name.startsWith('_')) {
+    const cachecell = new CacheCell(data, timeout);
+    let cache = null;
+    if (name.startsWith("_")) {
       try {
-        uni.setStorageSync(name, cachecell)
-        cache = cacheMap.set(name, cachecell)
+        uni.setStorageSync(name, cachecell);
+        cache = cacheMap.set(name, cachecell);
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
     } else {
-      cache = cacheMap.set(name, cachecell)
+      cache = cacheMap.set(name, cachecell);
     }
-    return cache
+    return cache;
   }
   get(name) {
-    return isTimeout(name) ? null : cacheMap.get(name).data
+    return isTimeout(name) ? null : cacheMap.get(name).data;
   }
   delete(name) {
-    let value = false
-    if (name.startsWith('_')) {
+    let value = false;
+    if (name.startsWith("_")) {
       try {
-        uni.removeStorageSync(name)
-        value = cacheMap.delete(name)
+        uni.removeStorageSync(name);
+        value = cacheMap.delete(name);
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
     } else {
-      value = cacheMap.delete(name)
+      value = cacheMap.delete(name);
     }
-    return value
+    return value;
   }
   has(name) {
-    return !isTimeout(name)
+    return !isTimeout(name);
   }
   clear() {
-    let value = false
+    let value = false;
     try {
-      uni.clearStorageSync()
-      cacheMap.clear()
-      value = true
+      uni.clearStorageSync();
+      cacheMap.clear();
+      value = true;
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
-    return value
+    return value;
   }
 }
 
-MinCache.install = function (Vue, {
-  timeout = 1200
-} = {}) {
-  Vue.prototype.$cache = new MinCache(timeout)
-}
+MinCache.install = function(Vue, { timeout = 1200 } = {}) {
+  Vue.prototype.$cache = new MinCache(timeout);
+};
 
-export default MinCache
+export default MinCache;
 
 /**使用方法 main.js
  * import MinCache from './MinCache'

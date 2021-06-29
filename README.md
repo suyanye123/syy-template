@@ -1,26 +1,6 @@
 # syy-uniapp-template
 
-### #目录结构
-
-```
-syy-uniapp-template
-│   public                  // 静态文件
-└───src                     // 业务逻辑代码
-│   │   pages               // 主页面
-│   │   api                 // http api 层
-│   └── components          // 公共组件
-│   │     └──global         // 全局组件
-│   │        │ BaseTable     // 基础表格
-│   │        │ BoxContent    // 基础Box
-│   │   mixins              // mixins
-│   │   store               // vuex
-│   │   styles              // 公共样式文件
-│   │   utils               // 工具库
-│   │   global.js           // 全局模块处理
-│   │   page.json    		// 页面注册、tabBar及分包等
-│   │   test.ts             // 空文件，用于避免tsconfig警告
-│   │   main.js             // 入口文件
-```
+基于官方模板，二次封装的 uniapp 小程序模板，引入了 uView UI 库，封装了 request、微信登录等等，开箱即用~
 
 ### #使用方法：
 
@@ -42,8 +22,6 @@ npm run wx
 <br/>
 
 ### #不同版本：
-
-master 分支——官方模板
 
 uView-version 分支——引入了 uView UI 库，并安装了 sass 和 sass-loader
 
@@ -94,3 +72,24 @@ npm install sass-loader@版本号 node-sass@版本号    //安装对应的版本
 ```
 
 或者升级或降级本地 node 版本
+
+### #目录结构
+
+```
+uView-version-template
+│   public                  // 静态文件
+└───src                     // 业务逻辑代码
+│   │   pages               // 主页面
+│   │   api                 // http api 层
+│   └── components          // 公共组件
+│   │     └──global         // 全局组件
+│   │        │ BaseTable     // 基础表格
+│   │        │ BoxContent    // 基础Box
+│   │   store               // vuex
+│   │   styles              // 公共样式文件
+│   │   utils               // 工具库
+│   │   global.js           // 全局模块处理
+│   │   page.json    		// 页面注册、tabBar及分包等
+│   │   test.ts             // 空文件，用于避免tsconfig警告
+│   │   main.js             // 入口文件
+```
