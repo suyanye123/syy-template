@@ -9,7 +9,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
   },
-  plugins: ["prettier", 'import'],
+  plugins: ["prettier", "import"],
   //自定义校验规则，拓展或者覆盖extends配置规则
   // "off"或者0     关闭检测规则
   // "warn"或者1    打开并把打开的检测规则作为警告（(不会导致程序退出）
@@ -21,30 +21,31 @@ module.exports = {
     "prefer-arrow-callback": "off",
 
     //禁用JS特定的语法 with语句
-    'no-restricted-syntax': ['error',  'WithStatement'],
+    "no-restricted-syntax": ["error",  "WithStatement"],
     "no-var": "error", //禁用var，用let和const代替
     "no-void": "error", //禁用void操作符
-     "no-tabs": "off", // 禁用 tab
+    "no-tabs": "off", // 禁用 tab
+    "no-debugger": "off", //不能调试
     //不检查属性名称驼峰法命名
-     camelcase: ["error", { properties: "never" }],
+    camelcase: ["error", { properties: "never" }],
     //若变量不会再次赋值，推荐使用const声明
-    'prefer-const': ['warn', { destructuring: 'all', ignoreReadBeforeAssign: true }],
+    "prefer-const": ["warn", { destructuring: "all", ignoreReadBeforeAssign: true }],
     //使用模板字面量而不是字符串拼接
-     'prefer-template': 'error',
+    "prefer-template": "error",
     //对象字面量语法简写
-    'object-shorthand': ['error', 'always', { ignoreConstructors: false, avoidQuotes: true }],
+    "object-shorthand": ["error", "always", { ignoreConstructors: false, avoidQuotes: true }],
     //变量声明在定义块外部报错
-    'block-scoped-var': 'error',
+    "block-scoped-var": "error",
     //条件语句的条件中不允许出现恒定不变的量，循环语句除外
-    'no-constant-condition': ['error', { checkLoops: false }],
+    "no-constant-condition": ["error", { checkLoops: false }],
     //规定不要重复声明变量
-    'no-redeclare': 'off',
+    "no-redeclare": "off",
     //未使用的变量
-     'no-unused-vars': [
-      'error',
+    "no-unused-vars": [
+      "error",
       {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
       },
     ],
     // 禁止出现空语句块,catch除外
@@ -65,42 +66,37 @@ module.exports = {
       { MemberExpression: 0, SwitchCase: 1, ignoredNodes: ["TemplateLiteral"] },
     ],
 
-     // vue
-    'vue/no-v-html': 'off',   //不使用v-html
-    'vue/require-default-prop': 'off',  //props 需要默认值
-    'vue/require-explicit-emits': 'off',  //由$emit()触发的事件名称需要定义在emits:[]选项中
-    'vue/multi-word-component-names': 'off',  //组件名称是否使用驼峰
+    // vue
+    "vue/no-v-html": "off",   //不使用v-html
+    "vue/require-default-prop": "off",  //props 需要默认值
+    "vue/require-explicit-emits": "off",  //由$emit()触发的事件名称需要定义在emits:[]选项中
+    "vue/multi-word-component-names": "off",  //组件名称是否使用驼峰
 
-     // import
-    'import/first': 'error',  //绝对导入应该放在相对导入前面
-    'import/no-duplicates': 'error',  //从单个模块进行的所有导入使用单一import语句
-    'import/order': [  //验证导入是否正确，插件 eslint-plugin-import的配置项，参考https://www.jianshu.com/p/31262bccbf91
-      'error',
+    // import
+    "import/first": "error",  //绝对导入应该放在相对导入前面
+    "import/no-duplicates": "error",  //从单个模块进行的所有导入使用单一import语句
+    "import/order": [  //验证导入是否正确，插件 eslint-plugin-import的配置项，参考https://www.jianshu.com/p/31262bccbf91
+      "error",
       {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+        groups: ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
         pathGroups: [
           {
-            pattern: 'vue',
-            group: 'external',
-            position: 'before',
+            pattern: "vue",
+            group: "external",
+            position: "before",
           },
           {
-            pattern: '@vue/**',
-            group: 'external',
-            position: 'before',
+            pattern: "@vue/**",
+            group: "external",
+            position: "before",
           },
           {
-            pattern: 'ant-design-vue',
-            group: 'internal',
+            pattern: "ant-design-vue",
+            group: "internal",
           },
         ],
-        pathGroupsExcludedImportTypes: ['type'],
+        pathGroupsExcludedImportTypes: ["type"],
       },
     ],
-
-
-
-
-
   },
 };

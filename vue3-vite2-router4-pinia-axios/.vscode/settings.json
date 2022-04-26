@@ -1,103 +1,44 @@
-{ // 工作区如何设置参考链接: link(https://code.visualstudio.com/docs/getstarted/settings)
-  //------------------------------------------------------//
-  //--------------------editor区域-------------------------//
-  //------------------------------------------------------//
-  // vscode默认启用了根据文件类型自动设置 tabsize 的,改为 false
-  "editor.detectIndentation": false,
-  //tab转为空格,需把detectIndentation 关闭
-  "editor.insertSpaces": true,
-  //## 缩进是4个空格
-  "editor.tabSize": 2,
-  //制表符显示->
-  "editor.renderControlCharacters": true,
-  //将空格显示为点
-  "editor.renderWhitespace": "all",
-  //设置编辑区域字体大小
-  "editor.fontSize": 16,
-  //# 文本自动换行吗
-  "editor.wordWrap": "off",
-  //开启行数提示
-  "editor.lineNumbers": "on",
-  // 在键入一行后是否自动化格式
-  "editor.formatOnType": false,
-  //## 在粘贴时自动格式化
-  "editor.formatOnPaste": true,
-  //## 每次保存的时候自动格式化
-  "editor.formatOnSave": true,
-  //## 保存时按照哪个规则进行格式化
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+{
+  // 工作区如何设置参考链接: link(https://code.visualstudio.com/docs/getstarted/settings)
+  "files.associations": {
+    "*.vue": "vue",
+    ".config": "json",
+    ".code-workspace": "jsonc",
+    ".babelrc": "json",
+    ".eslintrc": "jsonc",
+    ".eslintrc*.json": "jsonc",
+    ".stylelintrc": "jsonc",
+    "stylelintrc": "jsonc",
+    ".htmlhintrc": "jsonc",
+    "htmlhintrc": "jsonc",
+    "Procfile*": "shellscript",
+    "README": "markdown",
+    "*.wpy": "vue",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
   },
-  // # vue每次保存的时候将代码按eslint格式进行修复
-  "[vue]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    }
+  "files.exclude": {
+    "**/*/adapters/**/index.ts": true,
+    "**/*/adapters/**/index.js": true
   },
-  // 下列文件默认格式化设置为 prettier  
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.vscode/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/bower_components/**": true,
+    "**/dist/**": true,
+    "**/yarn.lock": true
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[less]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  //------------------------------------------------------//
-  //----------------------其他配置-------------------------//
-  //------------------------------------------------------//
-  //## 指定格式的文件由eslint进行代码检查
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "html",
-    "jsx",
-    "vue"
-  ],
-  //设置auto-close-tag插件(自动补全标签)生效的文件
-  "auto-close-tag.activationOnLanguage": [
-    "xml",
-    "php",
-    "blade",
-    "ejs",
-    "jinja",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "plaintext",
-    "markdown",
-    "vue",
-    "liquid",
-    "erb",
-    "lang-cfml",
-    "cfml",
-    "HTML (Eex)"
-  ],
-  //------------------------------------------------------//
-  //--------------------vscode搜索配置---------------------//
-  //------------------------------------------------------//
+  "files.autoSave": "onWindowChange", // 切换窗口时自动保存。
+  "search.useIgnoreFiles": true,
   "search.exclude": {
+    "**/build": true,
+    "**/output": true,
+    "**/package-lock.json": true,
+    "**/*.pid": true,
     "**/node_modules": true,
     "**/*.log": true,
     "**/*.log*": true,
@@ -122,27 +63,149 @@
     "yarn-error.log": true,
     "**/.yarn": true
   },
-  "files.exclude": {
-    "**/.cache": true,
-    "**/.editorconfig": true,
-    "**/.eslintcache": true,
-    "**/bower_components": true,
-    "**/.idea": true,
-    "**/tmp": true,
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true
+  "editor.rulers": [80, 120], //竖卡尺
+  "files.eol": "\n", //默认换行符
+  "files.trimTrailingWhitespace": true, //保存文件剪切尾随空格
+  "files.insertFinalNewline": true, //设置文件末尾增加新行
+  // vscode默认启用了根据文件类型自动设置 tabsize 的,改为 false
+  "editor.detectIndentation": false,
+  //tab转为空格,需把detectIndentation 关闭
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2, // 缩进是2个空格
+  "editor.renderControlCharacters": true, //制表符显示->
+  "editor.renderWhitespace": "none", //将空格显示为点??
+  //设置编辑区域字体大小
+  "editor.fontSize": 16,
+  //# 文本自动换行吗
+  "editor.wordWrap": "off",
+  //开启行数提示
+  "editor.lineNumbers": "on",
+  // 在键入一行后是否自动化格式
+  "editor.formatOnType": false,
+  //## 在粘贴时自动格式化
+  "editor.formatOnPaste": true,
+  //## 每次保存的时候自动格式化
+  "editor.formatOnSave": true,
+  // # vue每次保存的时候将代码按eslint格式进行修复
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/.vscode/**": true,
-    "**/node_modules/**": true,
-    "**/tmp/**": true,
-    "**/bower_components/**": true,
-    "**/dist/**": true,
-    "**/yarn.lock": true
+  "editor.codeActionsOnSaveTimeout": 5000,
+  //------------------------------------------------------//
+  //----------------------eslint配置-----------------------//
+  //------------------------------------------------------//
+  "eslint.enable": true, // 启用ESLint
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true, //是否在整个工作台使用eslint
+  "flow.enabled": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.run": "onType", // 运行linter的时间，onSave/onType: 保存后/输入时
+  //## 指定格式的文件由eslint进行代码检查 ，逐步取代老版本的定义校验eslint.validate
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue"],
+  "stylelint.enable": false,
+  "htmlhint.enable": true,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  //默认格式化方式
+  "editor.defaultFormatter": "EditorConfig.EditorConfig",
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  // 下列文件默认格式化设置为 prettier
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  //vscode默认使用tab键来选择提示项（好像没法改），所以按tab时变成选中提示项，而非展开缩写
+  //此设置 允许通过 Enter 来选择建议项
+  "emmet.triggerExpansionOnTab": true,
+
+  //待办事项插件
+  "todo-tree.general.tags": ["TODO:", "FIXME:"],
+  "todo-tree.highlights.defaultHighlight": {
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO:": {
+      "foreground": "#fff",
+      "background": "#ffbd2a",
+      "iconColour": "#ffbd2a"
+    },
+    "FIXME:": {
+      "foreground": "#fff",
+      "background": "#f06292",
+      "icon": "flame",
+      "iconColour": "#f06292"
+    }
+  },
+  //设置auto-close-tag插件(自动补全标签)生效的文件
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (Eex)"
+  ]
 }
