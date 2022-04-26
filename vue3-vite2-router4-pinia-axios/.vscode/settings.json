@@ -1,0 +1,88 @@
+{
+    //------------------------------------------------------//
+    //--------------------editor区域-------------------------//
+    //------------------------------------------------------//
+    // vscode默认启用了根据文件类型自动设置 tabsize 的,改为 false
+    "editor.detectIndentation": false,
+    //tab转为空格,需把detectIndentation 关闭
+    "editor.insertSpaces": true,
+    //## 缩进是4个空格
+    "editor.tabSize": 4,
+    //制表符显示->
+    "editor.renderControlCharacters": true,
+    //将空格显示为点
+    "editor.renderWhitespace": "all",
+    //设置编辑区域字体大小
+    "editor.fontSize": 16,
+    //文本自动换行
+    "editor.wordWrap": "off",
+    //开启行数提示
+    "editor.lineNumbers": "on",
+    // 在键入一行后是否自动化格式
+    "editor.formatOnType": false,
+    //## 在粘贴时自动格式化
+    "editor.formatOnPaste": true,
+    //## 每次保存的时候自动格式化
+    "editor.formatOnSave": true,
+    //## 保存时按照哪个规则进行格式化
+    "editor.codeActionsOnSave": {
+        // "source.fixAll.eslint": true
+    },
+    //------------------------------------------------------//
+    //--------------------vetur配置-------------------------//
+    //------------------------------------------------------//
+    // 指定 *.vue 文件的格式化工具为 vetur
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur"
+    },
+    // vetur格式化配置
+    "vetur.format.options.tabSize": 2,
+    // "vetur.format.options.useTabs": true,
+    "vetur.format.defaultFormatterOptions": {
+        "prettier": {
+            // 禁止随时添加逗号
+            "trailingComma": "none"
+        }
+    },
+    //------------------------------------------------------//
+    //--------------------prettier配置----------------------//
+    //------------------------------------------------------//
+    // html与js的默认格式化设置为 prettier  
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    //------------------------------------------------------//
+    //----------------------其他配置-------------------------//
+    //------------------------------------------------------//
+    //## 指定格式的文件由eslint进行代码检查
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "jsx",
+        "vue"
+    ],
+    //设置auto-close-tag插件(自动补全标签)生效的文件
+    "auto-close-tag.activationOnLanguage": [
+        "xml",
+        "php",
+        "blade",
+        "ejs",
+        "jinja",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "plaintext",
+        "markdown",
+        "vue",
+        "liquid",
+        "erb",
+        "lang-cfml",
+        "cfml",
+        "HTML (Eex)"
+    ],
+}
