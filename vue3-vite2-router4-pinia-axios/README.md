@@ -23,6 +23,10 @@ The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs]
 - [Pinia2](https://github.com/posva/pinia/) - manage state instead of vuex
 - [axios](https://github.com/axios/axios)
 - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) - a vite plugin can auto import ui library on demand
+- eslint-plugin-prettier -  ESLint 整合 Prettier 插件
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)  - ESLint 禁用掉一些不必要的和 Prettier 冲突的 规则
+- Prettier - 代码风格的约束工具
+- [ESLint](https://so.csdn.net/so/search?q=ESLint&spm=1001.2101.3001.7020) - 代码质量和错误检查工具
 
 
 
@@ -39,8 +43,9 @@ yarn dev
 
 ## Recommended IDE Setup
 
-- VS Code + Eslint + Prettier + Vetur	代码规范
-- Todo Tree  	待办事项
+- VS Code + Eslint + Prettier + Vetur  -  代码规范
+- EditorConfig for VS Code  -  不同编译器共享同一份配置文件
+- Todo Tree  -  待办事项
 
 
 
