@@ -1,9 +1,19 @@
-root = true # 让这个文件生效，高于本地规则
+# EditorConfig is awesome: https://EditorConfig.org
+
+# EditorConfig 配置文件顶级文件
+# 设为 true 时，从文件所在目录，向上查找 .editorconfig 时，直到匹配到 root = true 的文件则会停止查找。该值不区分大小写。
+# .editorconfig 配置文件会覆盖本地IDE默认规则，但优先度低于插件的配置文件
+root = true 
+
+# 每一个文件用一个新的空行结尾
+[*]
+end_of_line = lf
+insert_final_newline = true
+
 
 [*.{js,jsx,ts,tsx,vue}] # 对哪些文件都生效
 charset = utf-8
 indent_style = space  # 缩进为空格
 indent_size = 2  # 缩进的尺寸
-insert_final_newline = true   # 是否在文件的最后插入一个空行
 trim_trailing_whitespace = true   # 是否删除行尾的空格
 end_of_line = lf  # 换行符格式为linux , win为 CRLF
