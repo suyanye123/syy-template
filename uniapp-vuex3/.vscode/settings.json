@@ -1,0 +1,3 @@
+{
+  "eslint.enable": false, // 禁用ESLint
+}
