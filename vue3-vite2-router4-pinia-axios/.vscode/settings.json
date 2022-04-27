@@ -1,5 +1,6 @@
 {
-  // 工作区如何设置参考链接: link(https://code.visualstudio.com/docs/getstarted/settings)
+  // 工作区如何设置参考官方链接: link(https://code.visualstudio.com/docs/getstarted/settings)
+
   "files.associations": {
     "*.vue": "vue",
     ".config": "json",
@@ -125,9 +126,12 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+
+  //只有vue 使用volar进行格式化
   "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "johnsoncodehk.volar"
   },
+
   // 下列文件默认格式化设置为 prettier
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -168,8 +172,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   //vscode默认使用tab键来选择提示项（好像没法改），所以按tab时变成选中提示项，而非展开缩写
-  //此设置 允许通过 Enter 来选择建议项
-  "emmet.triggerExpansionOnTab": true,
+  "emmet.triggerExpansionOnTab": true, //此设置 允许通过 Enter 来选择建议项
 
   //code spell checker插件
   "cSpell.enabled": true,
@@ -187,7 +190,7 @@
     "vue"
   ],
   //工作区Ignore Words
-  "cSpell.words": ["vite"],
+  "cSpell.words": ["vite", ""],
 
   //待办事项插件
   "todo-tree.general.tags": ["TODO:", "FIXME:"],
