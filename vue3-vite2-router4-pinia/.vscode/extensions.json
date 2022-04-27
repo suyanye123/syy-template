@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "johnsoncodehk.volar",
+    "streetsidesoftware.code-spell-checker",
+    "gruntfuggly.todo-tree",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "drKnoxy.eslint-disable-snippets"
+  ]
+}
