@@ -5,6 +5,7 @@
     "gruntfuggly.todo-tree",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "drKnoxy.eslint-disable-snippets"
+    "drknoxy.eslint-disable-snippets",
+    "eamodio.gitlens"
   ]
 }

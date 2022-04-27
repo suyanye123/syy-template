@@ -44,19 +44,21 @@ yarn dev
 
 ## Recommended IDE Setup
 
-- VS Code + Eslint + Prettier + Vetur  -  代码规范
+- VS Code + Eslint + Prettier  -  代码规范
+- [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)  -  Vue3 代码格式化
 - EditorConfig for VS Code  -  跨不同编辑器或 IDE 统一编码风格配置
 - Todo Tree  -  待办事项
+- GitLens -  git 提交记录
 
 
 
 ## Notice
 
-本模板代码规范采用的是 Vetur + Eslint + Prettier 方案，
+本模板代码规范采用的是 Eslint + Prettier + Volar 方案，
 
 具体配置可参考 .vscode 文件，
 
-您也可以删除该文件，然后使用 [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) 等其他方案自行配置。
+您也可以删除该文件，然后使用其他方案自行配置。
 
 
 

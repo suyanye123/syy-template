@@ -66,6 +66,9 @@
   },
   "editor.rulers": [80, 120], //竖卡尺
   "files.eol": "\n", //默认换行符
+  "path-intellisense.mappings": {
+    "@/": "${workspaceRoot}/src"
+  }, // @/开头的路径自动映射为 /src
   "files.trimTrailingWhitespace": true, //保存文件剪切尾随空格
   "files.insertFinalNewline": true, //设置文件末尾增加新行
   // vscode默认启用了根据文件类型自动设置 tabsize 的,改为 false
@@ -190,10 +193,13 @@
     "vue"
   ],
   //工作区Ignore Words
-  "cSpell.words": ["vite", ""],
+  "cSpell.words": ["vite"],
 
   //待办事项插件
-  "todo-tree.general.tags": ["TODO:", "FIXME:"],
+  "todo-tree.general.enableFileWatcher": true,
+  "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/history"],
+  "todo-tree.filtering.ignoreGitSubmodules": true,
+  "todo-tree.general.tags": ["TODO", "FIXME", "todo"],
   "todo-tree.highlights.defaultHighlight": {
     "gutterIcon": true
   },
