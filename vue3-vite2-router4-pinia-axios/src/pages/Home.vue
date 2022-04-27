@@ -1,12 +1,15 @@
 <template>
   <div class="hello">
-     我是第一个路由组件
+    <HelloWorld></HelloWorld>
   </div>
 </template>
 
 <script>
+import HelloWorld from "../components/HelloWorld.vue";
+
 export default {
-  name: "HelloWorld"
+  name: "Home",
+  components: { HelloWorld }
 };
 </script>
 

@@ -5,16 +5,18 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
+  parser: "vue-eslint-parser",
   parserOptions: {
     ecmaVersion: "latest",
   },
   plugins: ["prettier", "import"],
-  //自定义校验规则，拓展或者覆盖extends配置规则
+  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
+  rules: {
+    //自定义校验规则，拓展或者覆盖extends配置规则
   // "off"或者0     关闭检测规则
   // "warn"或者1    打开并把打开的检测规则作为警告（(不会导致程序退出）
   // "error"或者2   打开并把检测规则作为一个错误（中断程序）
-  rules: {
+
     // prettier
     "prettier/prettier": "error",
     "arrow-body-style": "off",
