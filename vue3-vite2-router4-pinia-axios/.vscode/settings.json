@@ -92,6 +92,7 @@
     "source.fixAll.eslint": true
   },
   "editor.codeActionsOnSaveTimeout": 5000,
+
   //------------------------------------------------------//
   //----------------------eslint配置-----------------------//
   //------------------------------------------------------//
@@ -169,6 +170,24 @@
   //vscode默认使用tab键来选择提示项（好像没法改），所以按tab时变成选中提示项，而非展开缩写
   //此设置 允许通过 Enter 来选择建议项
   "emmet.triggerExpansionOnTab": true,
+
+  //code spell checker插件
+  "cSpell.enabled": true,
+  "cSpell.diagnosticLevel": "Hint", //单词错误进行提醒，而不是波浪线error
+  "cSpell.enabledLanguageIds": [
+    "css",
+    "git-commit",
+    "html",
+    "javascript",
+    "less",
+    "markdown",
+    "scss",
+    "text",
+    "typescript",
+    "vue"
+  ],
+  //工作区Ignore Words
+  "cSpell.words": ["vite"],
 
   //待办事项插件
   "todo-tree.general.tags": ["TODO:", "FIXME:"],

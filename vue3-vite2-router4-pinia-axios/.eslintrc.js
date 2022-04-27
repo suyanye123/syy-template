@@ -20,9 +20,10 @@ module.exports = {
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
 
-    //禁用JS特定的语法 with语句
-    "no-restricted-syntax": ["error",  "WithStatement"],
+
+    "no-restricted-syntax": ["error",  "WithStatement"],   //禁用JS特定的语法 with语句
     "no-var": "error", //禁用var，用let和const代替
+    "no-undef": ["error"],
     "no-void": "error", //禁用void操作符
     "no-tabs": "off", // 禁用 tab
     "no-debugger": "off", //不能调试
