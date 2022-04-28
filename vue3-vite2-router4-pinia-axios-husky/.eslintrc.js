@@ -10,7 +10,7 @@ module.exports = {
     ecmaVersion: "latest",
   },
   plugins: ["prettier", "import"],
-  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
+  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier","plugin:prettier/recommended"],
   rules: {
     //自定义校验规则，拓展或者覆盖extends配置规则
   // "off"或者0     关闭检测规则
