@@ -2,7 +2,7 @@
   "name": "vue3-template1",
   "private": true,
   "version": "0.1.0",
-   "author": {
+  "author": {
     "name": "suyanye123",
     "email": "409914837@qq.com",
     "url": "https://github.com/suyanye123"
@@ -12,22 +12,17 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-   "engines": {
-   "node": "^12 || >=14"
+  " engines": {
+    "node": "^12 || >=14"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "pinia": "^2.0.13",
     "vue": "^3.2.25",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
-    "eslint": "^8.14.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.6.0",
-    "prettier": "^2.6.2",
     "vite": "^2.9.5"
   }
 }
