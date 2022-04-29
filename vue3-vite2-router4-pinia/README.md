@@ -1,30 +1,47 @@
 # Vue 3 + Vite2 + Pinia2
 
+> Vue3 + axios + Vite + JS 快速开发模板
+
 This template should help get you started developing with Vue 3 in Vite.
 
 The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Profile
-VUe3+axios+Vite+JS 简化快速开发模板
 
-无代码检验和格式化工具搭配
 
-## Commit standards
+## Notice
 
-#### git commit 规范
+- 默认使用的是 VS Code
 
-- `feat` 增加新功能
-- `fix` 修复问题/BUG
-- `style` 代码风格相关无影响运行结果的
-- `perf` 优化/性能提升
-- `refactor` 重构
-- `revert` 撤销修改
-- `test` 测试相关
-- `docs` 文档/注释
-- `chore` 依赖更新/脚手架配置修改等
-- `workflow` 工作流改进
-- `ci` 持续集成
-- `types` 类型定义文件更改
-- `wip` 开发中
-- `mod` 不确定分类的修改
-- `release` 发布
+- Vue 文件使用 Volar 进行格式化，请在本项目工作区禁用 Vetur 插件
+- 其他文件使用 Prettier 进行格式化，如果没有 Prettier 或在其他编辑器，则按照 .EditorConfig 格式化
+
+
+
+## Usage
+
+```shell
+# 安装
+yarn
+# 运行
+yarn dev
+```
+
+
+
+## Depends
+
+- [Vue 3.x](https://github.com/vuejs/vue-next)
+- [Vue-Router 4.x](https://github.com/vuejs/vue-router-next)
+- [Pinia2](https://github.com/posva/pinia/) - manage state instead of vuex
+- [axios](https://github.com/axios/axios)
+
+
+
+## Recommended IDE Setup
+
+- [Prettier](https://github.com/prettier/prettier) - 代码风格的约束工具
+
+- [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) - Vue3 代码格式化
+- EditorConfig for VS Code - 跨不同编辑器或 IDE 统一编码风格配置
+- Todo Tree - 待办事项
+- GitLens - git 提交记录

@@ -1,0 +1,10 @@
+{
+  "bracketSameLine": true,
+  "tabWidth": 2,
+  "printWidth": 120,
+  "vueIndentScriptAndStyle": false,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "ignore"
+}
