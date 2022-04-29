@@ -6,7 +6,7 @@
   },
 
   //格式化规则
-  // "editor.defaultFormatter": "EditorConfig.EditorConfig",
+  "editor.defaultFormatter": "EditorConfig.EditorConfig",
 
   "[vue]": {
     "editor.defaultFormatter": "johnsoncodehk.volar"
@@ -46,7 +46,7 @@
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
 
-  //todo插件
+  //插件TODO规则
   "todo-tree.general.tags": ["TODO:", "FIXME:"],
   "todo-tree.general.enableFileWatcher": true,
   "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/history"],
