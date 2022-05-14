@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "johnsoncodehk.volar",
+    "Vue.volar",
     "gruntfuggly.todo-tree",
     "eamodio.gitlens",
     "yzhang.markdown-all-in-one"
