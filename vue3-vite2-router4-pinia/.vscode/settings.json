@@ -8,7 +8,7 @@
   //格式化规则
   "editor.defaultFormatter": "EditorConfig.EditorConfig",
   "[vue]": {
-    "editor.defaultFormatter": "johnsoncodehk.volar"
+    "editor.defaultFormatter": "Vue.volar"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
