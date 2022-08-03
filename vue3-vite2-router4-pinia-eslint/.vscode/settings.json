@@ -2,7 +2,6 @@
   "path-intellisense.mappings": {
     "@": "${workspaceRoot}/src"
   }, // @/开头的路径自动映射为 /src
-
   // 在键入一行后是否自动化格式
   "editor.formatOnType": false,
   //## 在粘贴时自动格式化
@@ -10,20 +9,24 @@
   //## 每次保存的时候自动格式化
   "editor.formatOnSave": true,
   // # 每次保存的时候将代码按eslint格式进行修复
-
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-
   "eslint.enable": true, // 启用ESLint
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
-
   "eslint.lintTask.enable": true, //是否在整个工作台使用eslint
   "flow.enabled": false,
   "eslint.run": "onType", // 运行linter的时间，onSave/onType: 保存后/输入时
   //## 指定格式的文件由eslint进行代码检查 ，逐步取代老版本的定义校验eslint.validate
-  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue"],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue"
+  ],
   // 关闭 vscode 默认的检查工具
   "html.validate.scripts": false,
   "javascript.validate.enable": false,
@@ -35,7 +38,6 @@
   "less.lint.zeroUnits": "error",
   "stylelint.enable": false,
   "htmlhint.enable": true,
-
   //默认格式化方式,优先级高于编辑器自身设定
   "editor.defaultFormatter": "EditorConfig.EditorConfig",
   //prettier 优先不使用editorconfig
@@ -54,18 +56,15 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-
   //只有vue 使用volar进行格式化
   "[vue]": {
-    "editor.defaultFormatter": "johnsoncodehk.volar"
+    "editor.defaultFormatter": "Vue.volar"
     // "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
-
   // 下列文件默认格式化设置为 prettier
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
@@ -103,7 +102,6 @@
   },
   //vscode默认使用tab键来选择提示项（好像没法改），所以按tab时变成选中提示项，而非展开缩写
   "emmet.triggerExpansionOnTab": true, //此设置 允许通过 Enter 来选择建议项
-
   //code spell checker插件
   "cSpell.enabled": true,
   "cSpell.diagnosticLevel": "Hint", //单词错误进行提醒，而不是波浪线error
@@ -120,13 +118,22 @@
     "vue"
   ],
   //工作区Ignore Words
-  "cSpell.words": ["Pinia", "vite"],
-
+  "cSpell.words": [
+    "Pinia",
+    "vite"
+  ],
   //待办事项插件
   "todo-tree.general.enableFileWatcher": true,
-  "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/history"],
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules",
+    "**/history"
+  ],
   "todo-tree.filtering.ignoreGitSubmodules": true,
-  "todo-tree.general.tags": ["TODO", "FIXME", "todo"],
+  "todo-tree.general.tags": [
+    "TODO",
+    "FIXME",
+    "todo"
+  ],
   "todo-tree.highlights.defaultHighlight": {
     "gutterIcon": true
   },

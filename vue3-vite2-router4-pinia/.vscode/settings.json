@@ -4,7 +4,6 @@
   "path-intellisense.mappings": {
     "@/": "${workspaceRoot}/src"
   },
-
   //格式化规则
   "editor.defaultFormatter": "EditorConfig.EditorConfig",
   "[vue]": {
@@ -28,7 +27,6 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -44,11 +42,16 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
-
   //插件TODO规则
-  "todo-tree.general.tags": ["TODO:", "FIXME:"],
+  "todo-tree.general.tags": [
+    "TODO:",
+    "FIXME:"
+  ],
   "todo-tree.general.enableFileWatcher": true,
-  "todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/history"],
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules",
+    "**/history"
+  ],
   "todo-tree.highlights.defaultHighlight": {
     "gutterIcon": true
   },
